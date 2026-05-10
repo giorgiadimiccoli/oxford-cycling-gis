@@ -1,6 +1,6 @@
 # Oxford Cycling GIS Analysis
 
-In this project, I apply geospatial analysis techniques to investigate cycling infrastructure and socioeconomic patterns across Oxford, England, UK.
+In this project, I apply geospatial analysis techniques to investigate cycling infrastructure and socioeconomic patterns across Oxford, England, UK. I hope that this project inspires other coders to explore similar topics and discover insightful trends about their geographic area of interest!
 
 ## Research Questions
 
@@ -17,21 +17,28 @@ In this project, I apply geospatial analysis techniques to investigate cycling i
 
 ## Methods
 
-- **Data cleaning**: Merged LSOA boundaries with population and GDP data, filtered to Oxford, and cleaned the OSM bike lane network (including handling roads with multiple `maxspeed` values, e.g. Woodstock Road).
-- **Exploratory Spatial Data Analysis (ESDA)**: Distribution plots and choropleth maps of bike lane speeds and GDP per capita per LSOA, plus a Kernel Density Estimation (KDE) plot.
-- **Spatial autocorrelation**: Built a Queen contiguity spatial weights matrix, computed spatial lag of GDP per capita, standardised values, and produced a Moran Plot. Confirmed with an R² coefficient.
-- **Bike lane vs. income analysis**: Split bike lane geometries at LSOA boundaries, spatially joined them to LSOAs, calculated total bike lane length per LSOA, normalised by area, and ran a Pearson correlation against GDP per capita (also normalised by area).
+- **Data cleaning**: 
+Merged LSOA boundaries with population and GDP data, filtered to Oxford, and cleaned the OSM bike lane network (including handling roads with multiple `maxspeed` values, e.g. Woodstock Road).
+- **Exploratory Spatial Data Analysis (ESDA)**: 
+Distribution plots and choropleth maps of bike lane speeds and GDP per capita per LSOA, plus a Kernel Density Estimation (KDE) plot.
+- **Spatial autocorrelation**: 
+Built a Queen contiguity spatial weights matrix, computed spatial lag of GDP per capita, standardised values, and produced a Moran Plot. Confirmed with an R² coefficient.
+- **Bike lane vs. income analysis**: 
+Split bike lane geometries at LSOA boundaries, spatially joined them to LSOAs, calculated total bike lane length per LSOA, normalised by area, and ran a Pearson correlation against GDP per capita (also normalised by area).
 
 ## Key Findings
 
 **Question 1 — Cyclist safety**
+
 The majority of bike lanes in Oxford have a maximum speed limit of 20–30 mph, suggesting cycling in the city is generally safe. However, ~76 streets carry a 50 mph limit and ~40 carry 70 mph (i.e., Eastern and Northern Bypasses, Marston Ferry Road, and Woodstock Road), which represent areas of higher risk for cyclists.
 
 **Question 2 — Spatial autocorrelation of income**
-There is **no spatial autocorrelation** between GDP per capita across Oxford's LSOAs. This means that a high-income LSOA is not necessarily surrounded by other high-income LSOAs. In fact, with the Moran Plot and R² we can confirm that the distribution is random. Central Oxford (i.e., MSOA Oxford 008) is a notable outlier, driven by the clustering of University of Oxford colleges.
+
+There is no spatial autocorrelation between GDP per capita across Oxford's LSOAs. This means that a high-income LSOA is not necessarily surrounded by other high-income LSOAs. In fact, with the Moran Plot and R² we can confirm that the distribution is random. Central Oxford (i.e., MSOA Oxford 008) is a notable outlier, driven by the clustering of University of Oxford colleges.
 
 **Question 3 — Income vs. bike lane provision**
-After normalising both GDP per capita and bike lane length by LSOA area, we found a **positive correlation** between income and cycling infrastructure. This suggests that higher-income neighbourhoods in Oxford have substantially more access to bike lanes than lower-income ones.
+
+After normalising both GDP per capita and bike lane length by LSOA area, we found a positive correlation between income and cycling infrastructure. This suggests that higher-income neighbourhoods in Oxford have substantially more access to bike lanes than lower-income ones!
 
 
 ## Repository Contents
@@ -42,9 +49,9 @@ After normalising both GDP per capita and bike lane length by LSOA area, we foun
 
 ## Viewing the Full Notebook
 
-The `oxford_cycling_gis.ipynb` notebook is **truncated when previewed on GitHub**, probably due to large embedded outputs from the interactive maps (built with `osmnx` and `folium`). So GitHub's preview cuts off partway through the notebook, and a substantial portion of the analysis is not visible in the browser.
+Unfortunately the `oxford_cycling_gis.ipynb` notebook is truncated when previewed on GitHub, probably due to large embedded outputs from the interactive maps (built with `osmnx` and `folium`). So GitHub's preview cuts off partway through the notebook, and a substantial portion of the analysis is not visible in the browser.
 
-To view the complete analysis, clone the repository and run the notebook locally:
+Don't worry, you can still access the complete analysis! To do that, clone the repository and run the notebook locally:
 
 ```cmd
 :: Clone the repository
@@ -64,4 +71,4 @@ pip install geopandas osmnx pysal contextily shapely seaborn matplotlib scikit-l
 ```
 
 ## Contact
-I hope that this proejct inspires other coders to explore similar topics and come up with insightful trends about their geographic area of interest! For any questions please don't hesitate to contact me via email at giorgiadt14@gmail.com or drop me a line on [LinkedIn](https://www.linkedin.com/in/giorgia-dim/)!
+For any questions please don't hesitate to contact me via email at giorgiadt14@gmail.com or drop me a line on [LinkedIn](https://www.linkedin.com/in/giorgia-dim/)!
